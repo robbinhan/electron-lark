@@ -1,5 +1,7 @@
 # Electron-Lark
 
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/ericwyn/electron-lark) ![GitHub All Releases](https://img.shields.io/github/downloads/ericwyn/electron-lark/total) 
+
 electron 版的飞书 Feishu (原 Lark)，对网页版本进行封装
 
 相比起普通网页版，功能如下
@@ -31,6 +33,9 @@ electron 版的飞书 Feishu (原 Lark)，对网页版本进行封装
 ### v1.0.1
  - 去除页面水印
  - 修改了应用菜单,去除无用按钮
+ 
+ ### v1.0.2
+ - 修复禁用了消息提醒的聊天仍然会闪烁 tray icon 的问题 
 
 ## 安装方法 (二进制安装)
  - 请从 [Release](https://github.com/Ericwyn/electron-lark/releases) 页面直接下载及安装 （ubuntu 18.04 上测试通过）
