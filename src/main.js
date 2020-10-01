@@ -25,6 +25,7 @@ const appTray = require("./windows/app_tray");
 
 // 菜单 Template
 const appMenu = require("./windows/app_menu");
+const { Platform } = require("electron-builder");
 
 const globalShortcut = electron.globalShortcut;
 
@@ -152,7 +153,11 @@ function startBlingIcon() {
     if (blingCount % 2 == 0) {
       appTray.setImage(appConf.dock32Empty);
     } else {
-      appTray.setImage(appConf.dock32);
+      if (process.platform === "darwin") {
+        appTray.setImage(appConf.darwin_dock24);
+      } else {
+        appTray.setImage(appConf.dock32);
+      }
     }
   }, 500);
 }
@@ -162,7 +167,11 @@ function stopBlingIcon() {
     clearInterval(blingTimer);
     blingTimer = null;
   }
-  appTray.setImage(appConf.dock32);
+  if (process.platform === "darwin") {
+    appTray.setImage(appConf.darwin_dock24);
+  } else {
+    appTray.setImage(appConf.dock32);
+  }
 }
 
 // 修复 Application Menu上图标不显示
